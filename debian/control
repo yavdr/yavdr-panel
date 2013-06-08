@@ -1,0 +1,15 @@
+Source: yavdr-panel
+Section: misc
+Priority: optional
+Maintainer: Gerald Dachs <gda@dachsweb.de>
+Uploaders: Gerald Dachs <gda@dachsweb.de>
+Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 7)
+
+Package: yavdr-panel
+Architecture: any
+Depends: lxpanel, nautilus
+Description: dependencies and configuration for yavdr-panel
+ dependencies and configuration for yavdr-panel
+
+
