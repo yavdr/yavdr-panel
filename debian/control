@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 7)
 
 Package: yavdr-panel
 Architecture: any
-Depends: lxpanel, nautilus
+Depends: lxpanel, nautilus, python-gmenu
 Description: dependencies and configuration for yavdr-panel
  dependencies and configuration for yavdr-panel
 
