@@ -6,11 +6,13 @@ PKG=yavdr-panel
 
 case "$1" in
     configure)
-        FILES="/usr/share/yavdr/events/actions/create-menuorg-xml"
+        FILES="/etc/gtk-3.0/settings.ini"
         for f in $FILES
         do
                 dpkg-divert --add --package ${PKG} --rename \
                         --divert $f.distrib $f
+                [ \! -e $f -o -L $f ] && \
+                        ln -sf /etc/yavdr/override/$f $f
         done
         ;;
 esac

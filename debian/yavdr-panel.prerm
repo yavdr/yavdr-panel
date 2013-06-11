@@ -6,10 +6,11 @@ PKG=yavdr-panel
 
 case "$1" in
     configure)
-        FILES="/usr/share/yavdr/events/actions/create-menuorg-xml"
+        FILES="/etc/gtk-3.0/settings.ini"
         for f in $FILES
         do
-                dpkg-divert --add --package ${PKG} --rename \
+                [ -L $f ] && rm $f
+		dpkg-divert --remove --package ${PKG} --rename \
                         --divert $f.distrib $f
         done
         ;;
