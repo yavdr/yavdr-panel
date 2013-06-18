@@ -9,9 +9,9 @@ case "$1" in
         FILES="/usr/share/yavdr/events/actions/create-menuorg-xml"
         for f in $FILES
         do
+                [ -L "${f}" ] && rm "${f}"
 		dpkg-divert --remove --package ${PKG} --rename \
                         --divert $f.distrib $f
-                [ -L "${f}" ] && rm "${f}"
         done
         ;;
 esac
