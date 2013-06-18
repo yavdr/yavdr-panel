@@ -14,6 +14,14 @@ case "$1" in
                 [ \! -e $f -o -L $f ] && \
                         ln -sf /etc/yavdr/override/$f $f
         done
+
+        FILES="/usr/share/yavdr/events/actions/create-menuorg-xml"
+        for f in $FILES
+        do
+                dpkg-divert --add --package ${PKG} --rename \
+                        --divert $f.distrib $f
+                [ -L "${f}" ] || ln -s "${f}.override" "${f}"
+        done
         ;;
 esac
 
