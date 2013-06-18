@@ -11,6 +11,7 @@ case "$1" in
         do
 		dpkg-divert --remove --package ${PKG} --rename \
                         --divert $f.distrib $f
+                [ -L "${f}" ] && rm "${f}"
         done
         ;;
 esac

@@ -11,6 +11,7 @@ case "$1" in
         do
                 dpkg-divert --add --package ${PKG} --rename \
                         --divert $f.distrib $f
+                [ -L "${f}" ] || ln -s "${f}.override" "${f}"
         done
         ;;
 esac
