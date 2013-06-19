@@ -29,7 +29,7 @@ class Appmenu2Menuorg:
 			if entry.launch_in_terminal:
 				command = 'xterm -title "%s" -e %s' % \
 						(entry.get_name(), command)
-			node.setAttribute("execute", "yavdr-applauncher " + command)
+			node.setAttribute("execute", command)
 			self.currentNode.appendChild(node)
 
 	def main(self):
@@ -38,9 +38,9 @@ class Appmenu2Menuorg:
 			if id == "Applications":
 				node.removeAttribute("id")
 				self.currentNode = node
-				map(self.walk_menu, gmenu.lookup_tree("/etc/xdg/menus/applications.menu").root.get_contents())
+				map(self.walk_menu, gmenu.lookup_tree("/etc/xdg/menus/lxde-applications.menu").root.get_contents())
 				break
-		with codecs.open('/var/lib/vdr/plugins/menuorg.xml', 'w','utf-8') as f:
+		with open('/var/lib/vdr/plugins/menuorg.xml', 'w') as f:
 			self.doc.writexml(f, encoding= 'utf-8', indent= '    ', newl= '\n')
 
 
