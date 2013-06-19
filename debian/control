@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 7)
 
 Package: yavdr-panel
 Architecture: any
-Depends: lxpanel, lxappearance, nautilus, python-gmenu, humanity-icon-theme
+Depends: lxpanel, lxappearance, nautilus, python-gmenu, humanity-icon-theme, gnome-themes-standard
 Description: dependencies and configuration for yavdr-panel
  dependencies and configuration for yavdr-panel
 
