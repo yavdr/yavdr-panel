@@ -6,6 +6,8 @@ PKG=yavdr-panel
 
 case "$1" in
     configure)
+        rm -f /var/lib/vdr/.gtkrc-2.0
+
         FILES="/etc/gtk-3.0/settings.ini"
         for f in $FILES
         do
