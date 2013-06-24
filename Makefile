@@ -1,5 +1,5 @@
-CFLAGS	+= -g $(shell pkg-config --cflags libgnomeui-2.0) $(shell pkg-config --cflags libgnome-menu)
-LDLIBS += $(shell pkg-config --libs libgnomeui-2.0) $(shell pkg-config --libs libgnome-menu)
+CFLAGS	+= -g $(shell pkg-config --cflags gtk+-2.0) $(shell pkg-config --cflags libgnome-menu)
+LDLIBS += $(shell pkg-config --libs gtk+-2.0) $(shell pkg-config --libs libgnome-menu)
 
 all: appmenu2menuorg
 

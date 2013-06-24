@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Gerald Dachs <gda@dachsweb.de>
 Uploaders: Gerald Dachs <gda@dachsweb.de>
 Standards-Version: 3.9.1
-Build-Depends: debhelper (>= 7), libgnomeui-dev, libgnome-menu-dev, libglib2.0-dev
+Build-Depends: debhelper (>= 7), libgnome-menu-dev, libglib2.0-dev, libgtk2.0-dev
 
 Package: yavdr-panel
 Architecture: any

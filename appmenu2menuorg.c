@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include <gnome.h>
+#include <string.h>
+#include <stdlib.h>
 #include <glib.h>
+#include <gtk/gtk.h>
 #define GMENU_I_KNOW_THIS_IS_UNSTABLE
 #include <gmenu-tree.h>
 
@@ -118,9 +120,9 @@ void main(int argc, char *argv[])
   GMenuTreeEntry *entry = NULL;
   const char *name = NULL;
 
-  gnome_init("test", "test", argc, argv);
+  gtk_set_locale ();
 
-  tree = gmenu_tree_lookup ("applications.menu", GMENU_TREE_FLAGS_NONE);
+  tree = gmenu_tree_lookup ("lxde-applications.menu", GMENU_TREE_FLAGS_NONE);
   directory = gmenu_tree_get_root_directory(tree);
 
   walk_tree(directory);
