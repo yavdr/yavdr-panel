@@ -9,7 +9,7 @@
 DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 build:
-	make
+	$(MAKE)
 
 override_dh_installdeb:
 	dh_installdeb
@@ -27,7 +27,7 @@ install: build
 	dh_prep
 	dh_installdirs
 	dh_install
-	make DESTDIR=$(CURDIR)/debian/yavdr-panel install
+	$(MAKE) DESTDIR=$(CURDIR)/debian/yavdr-panel install
 
 
 # Build architecture-independent files here.
@@ -38,13 +38,13 @@ binary-indep: build install
 binary-arch: build install
 	dh_testdir
 	dh_testroot
-
 	dh_installdocs
 	dh_installchangelogs
 	dh_link
 	dh_compress
 	dh_fixperms
 	dh_installdeb
+	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
