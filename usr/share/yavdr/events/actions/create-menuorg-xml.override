@@ -6,6 +6,7 @@ fi
 
 export LANG
 
-process-template --owner=vdr --group=vdr /var/lib/vdr/plugins/menuorg.xml.in
+appmenu2menuorg >/tmp/xdg-menu.xml
 
-appmenu2menuorg
+process-template --owner=vdr --group=vdr /var/lib/vdr/plugins/menuorg.xml
+
