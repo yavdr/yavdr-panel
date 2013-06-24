@@ -19,7 +19,7 @@ clean:
 	dh_testdir
 	dh_testroot
 	dh_clean
-	make clean
+	$(MAKE) clean
 
 install: build
 	dh_testdir
