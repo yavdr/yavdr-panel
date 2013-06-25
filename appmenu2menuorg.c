@@ -102,11 +102,11 @@ void walk_tree(GMenuTreeDirectory *root)
             {
               if (gmenu_tree_entry_get_launch_in_terminal(list->data))
               {
-                printf("<command name=\"%s\" execute=\"xterm -title '%s' -e '%s' &amp;\" >\n", application, application, exec);
+                printf("<command name=\"%s\" execute=\"xterm -title '%s' -e '%s' &amp;\" \\>\n", application, application, exec);
               }
               else
               {
-                printf("<command name=\"%s\" execute=\"%s &amp;\" >\n", application, exec);
+                printf("<command name=\"%s\" execute=\"%s &amp;\" \\>\n", application, exec);
               }
               free((void *)application);
             }
