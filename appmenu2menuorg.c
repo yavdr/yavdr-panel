@@ -50,7 +50,7 @@ char *escape(const char *str)
       if (!strncmp(pstr, tab[i].from, 2))
       {
         strcpy(pbuf, tab[i].to);
-        pbuf += 6;
+        pbuf += strlen(tab[i].to);
         pstr++;
         found = 1;
         break;
