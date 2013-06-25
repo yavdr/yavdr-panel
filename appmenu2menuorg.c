@@ -100,7 +100,14 @@ void walk_tree(GMenuTreeDirectory *root)
             exec = filter(gmenu_tree_entry_get_exec(list->data));
             if (exec)
             {
-              printf("<command name=\"%s\" execute=\"%s\">\n", application, exec);
+              if (gmenu_tree_entry_get_launch_in_terminal(list->data))
+              {
+                printf("<command name=\"%s\" execute=\"xterm -title '%s' -e '%s' &amp;\" >\n", application, application, exec);
+              }
+              else
+              {
+                printf("<command name=\"%s\" execute=\"%s &amp;\" >\n", application, exec);
+              }
               free((void *)application);
             }
           }
