@@ -59,7 +59,7 @@ void walk_tree(GMenuTreeDirectory *root)
               }
               else
               {
-                printf("<command name=\"%s\" execute=\"%s &amp;\" \\>\n", application, exec);
+                printf("<command name=\"%s\" execute=\"menuorg-execute-wrapper %s '%s'\" \\>\n", application, application, exec);
               }
               free((void *)application);
             }
